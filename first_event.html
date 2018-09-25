@@ -1,0 +1,40 @@
+<!doctype html>
+ <html>
+    <head>
+        <title>First Event</title>
+        <script>
+            function showCongratulations(theButtonClicked) {
+            document.getElementById("result_display").innerHTML = "Congratulations, you did it!" + "<p>You got the page to update!</p>"
+            theButtonClicked.innerHTML = "Click Me Again! I like this game!"
+            }
+        </script>
+        <style>
+body {
+  background-color: gray;
+}
+
+button {
+  background-color: yellow;
+  border: none;
+  border-radius: 35px;
+  color: red;
+  font-weight: bold;
+  height: 45px;
+}
+
+section {
+  background-color: red;
+  color: yellow;
+  width: 180px;
+  padding: 20px;
+  margin-top: 25px;
+  border-radius: 15px;
+}
+
+        </style>
+    </head>
+    <body>
+        <button onclick="showCongratulations(this)">Click Me!</button>
+    <section id="result_display"></section>
+</body>
+</html>
