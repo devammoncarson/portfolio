@@ -1,0 +1,148 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./images/wave.jpg");
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    background-color: rgb(255,255,255,0.3);
+    min-width: 850px;
+    min-height: 1600px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.heading {
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(21, 21, 80);
+    font-style: italic;
+}
+
+h1 {
+    margin-bottom: 0px;
+    margin-top: 80px;
+}
+
+.time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.remaining {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.current {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.current-time {
+    font-size: 100px;
+    font-weight: bold;
+    color:  rgb(21, 21, 80);
+}
+
+.timer {
+    margin: 50px;
+    font-size: 200px;
+    font-weight: bold;
+    color: white;
+    text-shadow:
+    -.5px -.5px 0  rgb(21, 21, 80),
+    .5px -.5px 0  rgb(21, 21, 80),
+    -.5px .5px 0  rgb(21, 21, 80),
+    .5px .5px 0  rgb(21, 21, 80);
+}
+
+.best-goal-current {
+    font-size: 50px;
+    color: white;
+}
+
+.best-time, .goal-time, .remaining-time {
+    font-size: 60px;
+    color:  rgb(21, 21, 80);
+    font-weight: bold;
+}
+
+#start, #stop {
+    border: none;
+    border-radius: 15px;
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    background-color:  rgb(21, 21, 80);
+}
+
+nav {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    margin-bottom: 0px;
+}
+
+li {
+    display: flex;
+    font-weight: bold;
+    font-size: 35px;
+    width: 100%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+li:nth-child(n+2) {
+    border-left: 1px solid #000;
+}
+
+#reset {
+    border: none;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.home-anchor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    color:white;
+    background-color:dodgerblue;
+}
+
+.home-anchor:hover {
+    background-color: white;
+    color: dodgerblue;
+}
+
+.home-anchor:active, #start:active, #stop:active {
+    background-color:rgb(21, 21, 80);
+    color: dodgerblue;
+}

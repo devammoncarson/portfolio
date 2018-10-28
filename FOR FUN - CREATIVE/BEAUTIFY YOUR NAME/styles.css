@@ -1,0 +1,62 @@
+html {
+  background-color: salmon;
+}
+
+button {
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 200px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+
+button:active {
+  background-color: yellow;
+  color: navy;
+}
+
+button.clear {
+  background-color:maroon;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  height: 30px;
+  width: 100px;
+  font-weight: bold;
+}
+
+button.clear:hover {
+  background-color: white;
+  color: maroon;
+}
+
+button:active {
+  background-color: yellow;
+  color: navy;
+}
+
+div {
+  height: 100%;
+  width: 100%;
+  color: black;
+  font-weight: bold;
+  font-size: 100px;
+  font-family: 'Charmonman', cursive;
+  text-align: center;
+  margin-top: 100px;
+}
+
+input {
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  height: 20px;
+  text-align: center;
+}

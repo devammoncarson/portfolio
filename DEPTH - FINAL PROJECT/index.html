@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DEPTH HOME</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="heading">
+            <h1>DEPTH</h1>
+        </div>
+            <div class="time">
+                <div class="best">
+                    <h3 class="best-time">BEST</h3>
+                    <p class="best-goal-current" id="best">00:00:00</p>
+                </div>
+                <div class="goal">
+                    <h3 class="goal-time">GOAL</h3>
+                    <p class="best-goal-current" id="goal">00:00:00</p>
+                </div>
+            </div>
+            <div class="remaining">
+                <div class="time-remain">
+                    <h3 class="remaining-time">TIME REMAINING</h3>
+                    <p class="best-goal-current" id="remain">00:00:00</p>
+                </div>
+            </div>
+            <div class="current">
+                <div class="wrapper">
+                    <h2 class="current-time">CURRENT TIME</h2>
+                    <output class="timer">00:00:00</output>
+                    <br>
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+                </div>
+            </div>
+        <nav>
+            <ul>
+                <li><a class="home-anchor" href="/goals/goals.html">GOALS</a></li>
+                <li><a class="home-anchor" href="#">PROGRESS</a></li>
+                <li><a class="home-anchor" href="#">SETTINGS</a></li>
+                <li><button class="home-anchor" id="reset">RESET</button></li>
+            </ul>
+        </nav>
+    </div>
+<script src="script.js"></script>
+</body>
+
+</html>

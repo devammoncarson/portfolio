@@ -1,0 +1,13 @@
+html {
+    background-color: coral;
+}
+
+input[type=button] {
+    border: none;
+    border-radius: 15px;
+    background-color: yellowgreen;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    width: 30px;
+}
