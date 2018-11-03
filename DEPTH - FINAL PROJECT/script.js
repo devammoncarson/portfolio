@@ -28,9 +28,9 @@ function startTimer() {
     return num;
   }
 
-  timeRemainMil = window.localStorage.goalMin - min;
+  timeRemainMin = window.localStorage.goalMin - min;
   timeRemainSec = window.localStorage.goalSec - sec;
-  timeRemainMin = window.localStorage.goalMil - mil;
+  timeRemainMil = window.localStorage.goalMil - mil;
   console.log(timeRemainSec);
   const timeRemainArea = document.querySelector('#remain');
   timeRemainArea.textContent = timeRemainMin + ":" + timeRemainSec + ":" + timeRemainMil;
@@ -74,7 +74,7 @@ resetBtn.addEventListener('click', reset);
   const goalArea = document.querySelector('#goal');
 
 
-  if ( window.localStorage.goal) {
+  if (window.localStorage.goal) {
     goalArea.textContent = window.localStorage.goal;
   } else {
     goalArea.textContent = "Set Goal";
