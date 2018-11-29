@@ -3,6 +3,10 @@ const output = document.querySelector('output');
 function setGoal() {
     let goalMin = parseInt(document.querySelector("#goal-min").value);
     let goalSec = parseInt(document.querySelector("#goal-sec").value);
+
+    // Hi
+    window.localStorage.goalMs = (window.parseInt(goalMin, 10) * 60000) + (window.parseInt(goalSec, 10) * 1000);
+
     let goalMil = "00";
     parseInt(goalMil);
 

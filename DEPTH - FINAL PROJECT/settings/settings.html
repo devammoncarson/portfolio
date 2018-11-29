@@ -3,23 +3,45 @@
 
 <head>
         <title>DEPTH SETTINGS</title>
-        <link rel="stylesheet" type="text/css" href="../styles.css">
         <link rel="stylesheet" type="text/css" href="settings.css">
 </head>
 
 <body>
     <div class="app-container">
-
-            <h1>DEPTH</h1>
-            <h2>SETTINGS</h2>
-            <label>Animations</label>
-            <input type="checkbox">
-            <label>Voice</label>
-            <input type="checkbox">
-            <label>Music</label>
-            <input type="checkbox">
-
-            <a href="../index.html">BACK HOME</a>
+      <div class="heading">
+        <h1>DEPTH</h1>
+      </div>
+      <div class="title">
+        <h2>SETTINGS</h2>
+      </div>
+            <ul>
+                <li class="options">
+                  <p>ANIMATIONS</p>
+                  <div class="toggle">
+                    <input type="checkbox" class="toggle__checkbox" id="animations">
+                    <div class="toggle__switch"></div>
+                  </div>
+                </li>
+                <li class="options">
+                  <p>VOICE</p>
+                  <div class="toggle">
+                    <input type="checkbox" class="toggle__checkbox" id="voice">
+                    <div class="toggle__switch"></div>
+                  </div>
+                </li>
+                <li class="options">
+                  <p>MUSIC</p>
+                  <div class="toggle">
+                    <input type="checkbox" class="toggle__checkbox" id="music">
+                    <div class="toggle__switch"></div>
+                  </div>
+                </li>
+              </ul>
+              
+              <output></output>
+          <div class="back">
+            <a href="../index.html">BACK</a>
+          </div>
         
     </div>
 

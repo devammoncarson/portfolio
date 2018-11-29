@@ -3,29 +3,49 @@
 
 <head>
         <title>DEPTH GOALS</title>
-        <link rel="stylesheet" type="text/css" href="../styles.css">
         <link rel="stylesheet" type="text/css" href="goals.css">
 </head>
 
 <body>
         <div class="app-container">
-                <h1>DEPTH</h1>
-                <h2>GOAL SETTER</h2>
+                <div class="heading">
+                        <h1>DEPTH</h1>
+                </div>
+                <div class="title">
+                        <h2>GOAL SETTER</h2>
+                </div>
                 <p>Enter your goal here:</p>
                 <label>Enter your minute goal here (2 digits)</label>
-                <input type="text" placeholder="Min Value i.e. '01'" id="goal-min">
+                <!-- <input type="text" placeholder="Min Value i.e. '01'"> -->
+                <select id="goal-min">
+                    <option value="1">1</option>
+                            <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                        </select>
+                        :
+                        <select id="goal-sec">
+                                        <option value="0">00</option>
+                                                <option value="10">10</option>
+                                                    <option value="20">20</option>
+                                                    <option value="30">30</option>
+                                                    <option value="40">40</option>
+                                                    <option value="50">50</option>
+                                            </select>
                 <br>
                 <label>Enter your seconds goal here (2 digits)</label>
-                <input type="text" placeholder="Sec Value i.e. '01'" id="goal-sec">
+                <!-- <input type="text" placeholder="Sec Value i.e. '01'"> -->
+                
                 <br>
                 <button onClick="setGoal()">Set Goal</button>
 
-                <br>
+                <hr>
 
                 <a href="../index.html">BACK HOME</a>
 
                 <output></output>
 
+                <hr>
         </div>
 
         <script src="goals.js"></script>

@@ -1,0 +1,25 @@
+body {
+    background-image: url("../images/wave.jpg");
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    background-color: rgb(255,255,255,0.3);
+    min-width: 850px;
+    min-height: 1600px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.heading {
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(21, 21, 80);
+    font-style: italic;
+}
