@@ -4,7 +4,6 @@ function setGoal() {
     let goalMin = parseInt(document.querySelector("#goal-min").value);
     let goalSec = parseInt(document.querySelector("#goal-sec").value);
 
-    // Hi
     window.localStorage.goalMs = (window.parseInt(goalMin, 10) * 60000) + (window.parseInt(goalSec, 10) * 1000);
 
     let goalMil = "00";
@@ -20,13 +19,12 @@ function setGoal() {
       return num;
     }
 
-
     window.localStorage.goalMin = goalMin;
     window.localStorage.goalSec = goalSec;
     window.localStorage.goalMil = goalMil;
 
     goal = goalMin + ":" + goalSec + ":" + goalMil;
-    output.textContent = goal;
+    output.textContent = "*Goal set as " + goal + "*";
     window.localStorage.goal = goal;
 };
 

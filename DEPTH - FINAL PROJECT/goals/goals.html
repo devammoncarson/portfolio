@@ -14,38 +14,45 @@
                 <div class="title">
                         <h2>GOAL SETTER</h2>
                 </div>
-                <p>Enter your goal here:</p>
-                <label>Enter your minute goal here (2 digits)</label>
-                <!-- <input type="text" placeholder="Min Value i.e. '01'"> -->
-                <select id="goal-min">
-                    <option value="1">1</option>
-                            <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                        </select>
-                        :
-                        <select id="goal-sec">
-                                        <option value="0">00</option>
-                                                <option value="10">10</option>
-                                                    <option value="20">20</option>
-                                                    <option value="30">30</option>
-                                                    <option value="40">40</option>
-                                                    <option value="50">50</option>
-                                            </select>
-                <br>
-                <label>Enter your seconds goal here (2 digits)</label>
-                <!-- <input type="text" placeholder="Sec Value i.e. '01'"> -->
-                
-                <br>
-                <button onClick="setGoal()">Set Goal</button>
-
-                <hr>
-
-                <a href="../index.html">BACK HOME</a>
-
                 <output></output>
+                <div class="main-goal-container">
+                <label>Set Minutes and Seconds</label>
+                <div class="goal-container">
+                <select id="goal-min">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                </select>
+                :
+                <select id="goal-sec">
+                        <option value="0">00</option>
+                        <option value="5">05</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
+                        <option value="30">30</option>
+                        <option value="35">35</option>
+                        <option value="40">40</option>
+                        <option value="45">45</option>
+                        <option value="50">50</option>
+                        <option value="55">55</option>
+                </select>
+                </div>
+                <button onClick="setGoal()">SET GOAL</button>
+        </div>
 
-                <hr>
+                <div class="back">
+                        <a class="back-anchor" href="../index.html">BACK</a>
+                </div>
         </div>
 
         <script src="goals.js"></script>

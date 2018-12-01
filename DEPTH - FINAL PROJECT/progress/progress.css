@@ -1,25 +1,78 @@
+*,*:before,*:after{
+    box-sizing:border-box;
+  }
+
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
     background-image: url("../images/wave.jpg");
-    background-color: black;
+    background-color:rgb(21, 21, 80);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: sans-serif;
-    display: flex;
-    justify-content: center;
+    font-size: 10px;
 }
 
 .app-container {
-    background-color: rgb(255,255,255,0.3);
-    min-width: 850px;
-    min-height: 1600px;
-    flex-direction: column;
-    flex-wrap: nowrap;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 90vw;
+  height: 100vh;
+  max-width: 768px;
+  max-height: 1024px;
 }
 
 .heading {
-    font-size: 100px;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(21, 21, 80);
-    font-style: italic;
+  font-size: 4em;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(21, 21, 80);
+  font-style: italic;
 }
+
+h1 {
+    margin:0;
+  }
+
+  .title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.back {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .back-anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e00;
+    font-size: 3em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    padding: 0.6em;
+  }
+
+  .back-anchor:hover {
+    color: #e00;
+    background-color: white;
+    border-top: .1em #e00 solid;
+    border-right: .1em #e00 solid;
+    border-left: .1em #e00 solid;
+  }
