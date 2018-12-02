@@ -105,10 +105,15 @@ h1 {
     border-radius: 15px;
     padding: 1.25em;
     margin: 0;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
     color: white;
     background-color:  rgb(21, 21, 80);
+    width: 8em;
+}
+
+#start:hover, #stop:hover {
+    color: dodgerblue;
 }
 
 nav {
@@ -147,6 +152,16 @@ li:nth-child(n+2) {
     font-weight: bold;
     padding: 2em;
     width: 100%;
+    background-color: rgb(21, 21, 80);
+}
+
+#reset:hover, #bestBtn:hover {
+    background-color: white;
+}
+
+#reset:active, #bestBtn:active {
+    background-color: dodgerblue;
+    color: white;
 }
 
 .home-anchor {

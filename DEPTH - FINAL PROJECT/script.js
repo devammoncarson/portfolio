@@ -65,20 +65,27 @@ function startTimer() {
   output.textContent = min + ":" + sec + ":" + mil;
 }
 
+//Background music file
 let audio = new Audio('/music/meditation-music.mp3');
+
+//Timer Functionality
+startBtn.addEventListener('click', start);
+stopBtn.addEventListener('click', stop);
+resetBtn.addEventListener('click', reset);
 
 function start() {
   now = Date.now();
   interval = window.setInterval(startTimer, 10);
-  audio.play();
-  responsiveVoice.speak("Timer Started");
+  //Toggle Check
+  toggleVoiceCheckStart(window.localStorage.voiceToggleValue);
+  toggleMusicCheckStart(window.localStorage.musicToggleValue);
 }
 
 function stop() {
   window.clearInterval(interval);
-  audio.pause();
-  audio.currentTime = 0;
-  responsiveVoice.speak("Timer Stopped");
+  //Toggle Check
+  toggleVoiceCheckStop(window.localStorage.voiceToggleValue);
+  toggleMusicCheckStop(window.localStorage.musicToggleValue);
 }
 
 function reset() {
@@ -89,10 +96,33 @@ function reset() {
   }
 }
 
-startBtn.addEventListener('click', start);
-stopBtn.addEventListener('click', stop);
-resetBtn.addEventListener('click', reset);
+//Toggle Check Functions
+function toggleMusicCheckStart(toggle) {
+  if (toggle === "true") {
+    audio.play();
+  }
+}
 
+function toggleMusicCheckStop(toggle) {
+  if (toggle === "true") {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+}
+
+function toggleVoiceCheckStart(toggle) {
+  if (toggle === "true") {
+    responsiveVoice.speak("Timer Started");
+  }
+}
+
+function toggleVoiceCheckStop(toggle) {
+  if (toggle === "true") {
+    responsiveVoice.speak("Timer Stopped");
+  }
+}
+
+//Goal Checker
   if (window.localStorage.goal) {
     goalArea.textContent = window.localStorage.goal;
     timeRemainArea.textContent = window.localStorage.goal;
@@ -108,5 +138,9 @@ resetBtn.addEventListener('click', reset);
     bestArea.textContent = bestTime;
     window.localStorage.bestTime = bestTime;
   }
-  
+
+
+
+
+
   

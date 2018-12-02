@@ -30,7 +30,7 @@ body {
 }
 
 .heading {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: bold;
   text-align: center;
   color: rgb(21, 21, 80);
@@ -45,34 +45,158 @@ h1 {
     display: flex;
     justify-content: center;
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
     color: #fff;
 }
 
+hr {
+  width: 100%;
+  margin:0;
+}
+
+.best-times {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(21, 21, 80, .5);
+}
+
+ul {
+  list-style-type: none;
+  width: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.date-title, .time-title {
+  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#date, #time {
+  font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+}
+
+.ultimate-goal-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 2em;
+  padding-right: 2em;
+  background-color: rgb(30,144,255, .5);
+}
+
+.ultimate-goal-title, .ultimate-goal {
+  font-size: 1.7em;
+  color: rgb(21, 21, 80);
+  font-weight: bold;
+}
+
+.main-goal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  width: 100%
+}
+
+.goal-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+label {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#ultimate-goal-min, #ultimate-goal-sec {
+  width: 2.5em;
+  font-size: 3em;
+  color: rgb(21, 21, 80);
+  border: none;
+  border-radius: 15px;
+}
+
+button {
+  border-radius: 15px;
+  font-size: 2em;
+  padding: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-weight: bold;
+  color:white;
+  background-color:dodgerblue;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(21, 21, 80);
+  border: .05em dodgerblue solid;
+}
+
 .back {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.back-anchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e00;
+  font-size: 3em;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  padding: 0.6em;
+}
+
+.back-anchor:hover {
+  background-color: maroon;
+  border-top: .05em #e00 solid;
+  border-right: .05em #e00 solid;
+  border-left: .05em #e00 solid;
+}
+
+@media (max-width: 499px) {
+  .main-goal-container {
+    flex-direction: column;
+}
+  .goal-container {
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
-  
-  .back-anchor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e00;
-    font-size: 3em;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-    padding: 0.6em;
+}
+
+@media (min-width: 500px) {
+  body {
+      font-size: 12px;
   }
 
-  .back-anchor:hover {
-    color: #e00;
-    background-color: white;
-    border-top: .1em #e00 solid;
-    border-right: .1em #e00 solid;
-    border-left: .1em #e00 solid;
+@media (min-width: 768px) {
+  body {
+      font-size: 13px;
   }
+}
