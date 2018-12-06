@@ -1,3 +1,5 @@
+window.scrollTo(0,document.body.scrollHeight);
+
 const startBtn = document.querySelector('#start');
 const stopBtn = document.querySelector('#stop');
 const resetBtn = document.querySelector('#reset');
@@ -42,7 +44,7 @@ function startTimer() {
 
   // Remaining time
   if (window.localStorage.goalMs == null) {
-    timeRemainArea.textContent = "*Set Goal*";
+    timeRemainArea.textContent = "(No Goal Set)";
   } else {
   let remainingMil = window.parseInt(window.localStorage.goalMs, 10) - elapsedMil;
   const remainingTimeObj = timeParser(remainingMil);
@@ -83,6 +85,7 @@ function start() {
 
 function stop() {
   window.clearInterval(interval);
+  bestTimeCheck(output.textContent);
   //Toggle Check
   toggleVoiceCheckStop(window.localStorage.voiceToggleValue);
   toggleMusicCheckStop(window.localStorage.musicToggleValue);
@@ -92,7 +95,7 @@ function reset() {
   output.textContent = "00:00:00";
   timeRemainArea.textContent = window.localStorage.goal;
   if (!timeRemainArea.textContent) {
-    timeRemainArea.textContent = "*Set Goal*";
+    timeRemainArea.textContent = "(No Goal Set)";
   }
 }
 
@@ -127,16 +130,16 @@ function toggleVoiceCheckStop(toggle) {
     goalArea.textContent = window.localStorage.goal;
     timeRemainArea.textContent = window.localStorage.goal;
   } else {
-    goalArea.textContent = "*Set Goal*";
-    timeRemainArea.textContent = "*Set Goal*";
+    goalArea.textContent = "(No Goal Set)";
+    timeRemainArea.textContent = "(No Goal Set)";
   }
   
-  // bestBtn.addEventListener('click', getBestTime)
-  
-  function getBestTime() {
-    let bestTime = output.textContent;
-    bestArea.textContent = bestTime;
-    window.localStorage.bestTime = bestTime;
+  function bestTimeCheck(time) {
+    window.localStorage.bestTime
+    if (time > window.localStorage.bestTime) {
+      window.localStorage.bestTime = time; 
+    } s
+    setBestTime(window.localStorage.bestTime);
   }
 
 

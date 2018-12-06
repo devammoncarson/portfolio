@@ -19,7 +19,6 @@ if (hours < 10) {
 }
 
 let now = mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes;
-let timeOfBestTime = now;
 }
 
 const ultimateGoalArea = document.querySelector('#ultimate-goal');
@@ -54,4 +53,14 @@ function setUltimateGoal() {
     window.localStorage.ultimateGoal = ultimateGoal;
     ultimateGoalArea.textContent = window.localStorage.ultimateGoal;
 };
+
+
+setBestTime(bestTime) {
+    bestTime.push([bestTimeList]);
+}
+
+const bestTimeList = [{
+    date: now,
+    time: ""
+}]
 
