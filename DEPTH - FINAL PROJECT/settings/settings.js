@@ -1,3 +1,5 @@
+window.scrollTo(0,document.body.scrollHeight);
+
 const animationToggle = document.querySelector('#animations');
 const voiceToggle = document.querySelector('#voice');
 const musicToggle = document.querySelector('#music');

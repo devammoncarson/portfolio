@@ -17,42 +17,94 @@
                 <div class="title">
                         <h2>GOAL SETTER</h2>
                 </div>
-                <output></output>
+                <hr>
                 <div class="main-goal-container">
-                <label>Set Minutes and Seconds</label>
-                <div class="goal-container">
-                <select id="goal-min">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                </select>
-                :
-                <select id="goal-sec">
-                        <option value="0">00</option>
-                        <option value="5">05</option>
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="25">25</option>
-                        <option value="30">30</option>
-                        <option value="35">35</option>
-                        <option value="40">40</option>
-                        <option value="45">45</option>
-                        <option value="50">50</option>
-                        <option value="55">55</option>
-                </select>
+                        <div class="label">
+                                <label>Set Current Goal</label>
+                        </div>
+                        <div class="goal-container">
+                                        <div class="time-container">
+                                <select id="goal-min">
+                                        <option value="0">00</option>
+                                        <option value="1">01</option>
+                                        <option value="2">02</option>
+                                        <option value="3">03</option>
+                                        <option value="4">04</option>
+                                        <option value="5">05</option>
+                                        <option value="6">06</option>
+                                        <option value="7">07</option>
+                                        <option value="8">08</option>
+                                        <option value="9">09</option>
+                                        <option value="10">10</option>
+                                </select>
+                                <p class="colon">:</p>
+                                <select id="goal-sec">
+                                        <option value="0">00</option>
+                                        <option value="5">05</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                        <option value="35">35</option>
+                                        <option value="40">40</option>
+                                        <option value="45">45</option>
+                                        <option value="50">50</option>
+                                        <option value="55">55</option>
+                                </select>
+                                </div>
+                        <button onClick="setGoal()">SET</button>
                 </div>
-                <button onClick="setGoal()">SET GOAL</button>
-        </div>
-
+                </div>
+                <hr>
+                <div class="goal-set-div">
+                       <p class="display-goal">Current Goal:</p><p class="display-goal" id="current-goal">(please set goal)</p>
+                </div>
+                <hr>
+                <br><br>
+                <div class="main-goal-container">
+                                <div class="label">
+                                                <label>Set Ultimate Goal</label>
+                                </div>
+                        <div class="goal-container">
+                                        <div class="time-container">
+                                <select id="ultimate-goal-min">
+                                        <option value="0">00</option>
+                                        <option value="1">01</option>
+                                        <option value="2">02</option>
+                                        <option value="3">03</option>
+                                        <option value="4">04</option>
+                                        <option value="5">05</option>
+                                        <option value="6">06</option>
+                                        <option value="7">07</option>
+                                        <option value="8">08</option>
+                                        <option value="9">09</option>
+                                        <option value="10">10</option>
+                                </select>
+                                <p class="colon">:</p>
+                                <select id="ultimate-goal-sec">
+                                        <option value="0">00</option>
+                                        <option value="5">05</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="25">25</option>
+                                        <option value="30">30</option>
+                                        <option value="35">35</option>
+                                        <option value="40">40</option>
+                                        <option value="45">45</option>
+                                        <option value="50">50</option>
+                                        <option value="55">55</option>
+                                </select>
+                        </div>
+                        <button onClick="setUltimateGoal()">SET</button>
+                </div>
+                </div>
+                <hr>
+                <div class="goal-set-div">
+                        <p class="display-goal">Ultimate Goal:</p><p class="display-goal" id="ultimate-goal">(please set goal)</p>
+                 </div>
+                <hr>
                 <div class="back">
                         <a class="back-anchor" href="../index.html">BACK</a>
                 </div>

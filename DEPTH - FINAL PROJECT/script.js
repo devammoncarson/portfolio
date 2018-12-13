@@ -7,11 +7,71 @@ const bestBtn = document.querySelector('#bestBtn');
 const output = document.querySelector('output');
 const timeRemainArea = document.querySelector('#remain');
 const goalArea = document.querySelector('#goal');
-const bestArea = document.querySelector('#best');
+const bestTimeArea = document.querySelector('#best');
 
 let now = 0;
 let interval = null;
+let elapsedMil = 0;
 
+// Copyright 2018 by Depth Development, LLC. https://codepen.io/depthdev/pen/QZYPZQ
+function debounce(fn, ms = 1000, go = true, buffer = 0) {
+  return function(...args) {
+    if (go && !buffer) fn.apply(this, args);
+    clearTimeout(buffer);
+    buffer = setTimeout(() => { buffer = 0; if (!go) fn.apply(this, args); }, ms);
+  };
+};
+
+//Voice Control
+const triggerVoice = debounce((min, sec) => {
+  if (min === "00" && sec === "15") {
+   responsiveVoice.speak("15 Seconds");
+ } else if (min === "00" && sec === "30") {
+   responsiveVoice.speak("30 Seconds");
+ } else if (min === "00" && sec === "45") {
+   responsiveVoice.speak("45 Seconds");
+ } else if (min === "01" && sec === "00") {
+   responsiveVoice.speak("1 Minute");
+ } else if (min === "01" && sec === "15") {
+   responsiveVoice.speak("1 Minute 15 Seconds");
+ } else if (min === "01" && sec === "30") {
+   responsiveVoice.speak("1 Minute 30 Seconds");
+ } else if (min === "01" && sec === "45") {
+   responsiveVoice.speak("1 Minute 45 Seconds");
+ } else if (min === "02" && sec === "00") {
+   responsiveVoice.speak("2 Minutes");
+ } else if (min === "02" && sec === "15") {
+   responsiveVoice.speak("2 Minutes 15 Seconds");
+ } else if (min === "02" && sec === "30") {
+   responsiveVoice.speak("2 Minutes 30 Seconds");
+ } else if (min === "02" && sec === "45") {
+   responsiveVoice.speak("2 Minutes 45 Seconds");
+ } else if (min === "03" && sec === "00") {
+   responsiveVoice.speak("3 Minutes");
+ } else if (min === "03" && sec === "15") {
+   responsiveVoice.speak("3 Minutes 15 Seconds");
+ } else if (min === "03" && sec === "30") {
+   responsiveVoice.speak("3 Minutes 30 Seconds");
+ } else if (min === "03" && sec === "45") {
+   responsiveVoice.speak("3 Minutes 45 Seconds");
+ } else if (min === "04" && sec === "00") {
+   responsiveVoice.speak("4 Minutes");
+ } else if (min === "04" && sec === "15") {
+   responsiveVoice.speak("4 Minutes 15 Seconds");
+ } else if (min === "04" && sec === "30") {
+   responsiveVoice.speak("4 Minutes 30 Seconds");
+ } else if (min === "04" && sec === "45") {
+   responsiveVoice.speak("4 Minutes 45 Seconds");
+ } 
+});
+
+const triggerVoiceGoal = debounce((min, sec) => {
+   responsiveVoice.speak("Your Current Goal Has Been Reached!");
+ });
+
+ const triggerVoiceUltimateGoal = debounce((min, sec) => {
+  responsiveVoice.speak("Your Ultimate Goal Has Been Reached!");
+});
 
 function timeParser(ms) {
   const mil = (ms).toFixed(0) % 100;
@@ -29,42 +89,82 @@ function padTime(num) {
   if (num < 10) {
     num = "0" + num;
   }
-  return num;
+  return "" + num;
 }
 
 
 function startTimer() {
   
   // Elapsed time
-  let elapsedMil = Date.now() - now;
+  elapsedMil = Date.now() - now;
   const timeObj = timeParser(elapsedMil);
   let mil = padTime(timeObj.mil);
   let sec = padTime(timeObj.sec);
   let min = padTime(timeObj.min);
 
+  if (['00', '15', '30', '45'].includes(sec)) {
+    triggerVoice(min, sec);
+  }
+
+  if (window.localStorage.goalMin === min && window.localStorage.goalSec === sec) {
+    triggerVoiceGoal(min, sec);
+  }
+
+  if (window.localStorage.ultimateGoalMin === min && window.localStorage.ultimateGoalSec === sec) {
+    triggerVoiceUltimateGoal(min, sec);
+  }
+  
   // Remaining time
-  if (window.localStorage.goalMs == null) {
-    timeRemainArea.textContent = "(No Goal Set)";
-  } else {
   let remainingMil = window.parseInt(window.localStorage.goalMs, 10) - elapsedMil;
   const remainingTimeObj = timeParser(remainingMil);
-
+  
   let rMil = remainingTimeObj.mil;
   let rSec = remainingTimeObj.sec;
   let rMin = remainingTimeObj.min;
-
-  if (rMil < 0 && rSec < 0 && rMil < 0) {
-    timeRemainArea.textContent = "Target Goal Reached!"
+  
+  if (!window.localStorage.goalMs) {
+    timeRemainArea.textContent = "set goal";
+  } else if (rMin < 1 && rSec < 1 && rMil < 1) {
+    timeRemainArea.textContent = "Current Goal Reached!";
+    timeRemainArea.classList.add('congrats');
+    window.setTimeout(function() {
+      timeRemainArea.classList.remove('congrats');
+    }, 3000);
   } else {
-  rMil = padTime(remainingTimeObj.mil);
-  rSec = padTime(remainingTimeObj.sec);
-  rMin = padTime(remainingTimeObj.min);
-  // Output Time Remaining
-  timeRemainArea.textContent = rMin + ":" + rSec + ":" + rMil;
+    rMil = padTime(remainingTimeObj.mil);
+    rSec = padTime(remainingTimeObj.sec);
+    rMin = padTime(remainingTimeObj.min);
+    // Output Time Remaining
+    timeRemainArea.textContent = rMin + ":" + rSec + ":" + rMil;
   }
-}
   // Output Timer
   output.textContent = min + ":" + sec + ":" + mil;
+}
+
+//Goal Checker
+if (window.localStorage.currentGoal) {
+  goalArea.textContent = window.localStorage.currentGoal;
+  timeRemainArea.textContent = window.localStorage.currentGoal;
+} else {
+  goalArea.textContent = "set goal";
+  timeRemainArea.textContent = "set goal";
+}
+
+function goalChecker() {
+  if (window.localStorage.currentGoal) {
+    goalArea.textContent = window.localStorage.currentGoal;
+    timeRemainArea.textContent = window.localStorage.currentGoal;
+  } else {
+    goalArea.textContent = "set goal";
+    timeRemainArea.textContent = "set goal";
+  }
+}
+
+//Best Time Checker
+if (window.localStorage.bestTime) {
+  bestTimeArea.textContent = window.localStorage.bestTime;
+} else {
+  bestTimeArea.textContent = "00:00:00"
 }
 
 //Background music file
@@ -85,7 +185,7 @@ function start() {
 
 function stop() {
   window.clearInterval(interval);
-  bestTimeCheck(output.textContent);
+  bestTimeCheck();
   //Toggle Check
   toggleVoiceCheckStop(window.localStorage.voiceToggleValue);
   toggleMusicCheckStop(window.localStorage.musicToggleValue);
@@ -93,10 +193,8 @@ function stop() {
 
 function reset() {
   output.textContent = "00:00:00";
-  timeRemainArea.textContent = window.localStorage.goal;
-  if (!timeRemainArea.textContent) {
-    timeRemainArea.textContent = "(No Goal Set)";
-  }
+  timeRemainArea.textContent = window.localStorage.currentGoal;
+  goalChecker();
 }
 
 //Toggle Check Functions
@@ -125,23 +223,25 @@ function toggleVoiceCheckStop(toggle) {
   }
 }
 
-//Goal Checker
-  if (window.localStorage.goal) {
-    goalArea.textContent = window.localStorage.goal;
-    timeRemainArea.textContent = window.localStorage.goal;
-  } else {
-    goalArea.textContent = "(No Goal Set)";
-    timeRemainArea.textContent = "(No Goal Set)";
-  }
-  
-  function bestTimeCheck(time) {
-    window.localStorage.bestTime
-    if (time > window.localStorage.bestTime) {
-      window.localStorage.bestTime = time; 
-    } s
-    setBestTime(window.localStorage.bestTime);
+  //Best Time Checker
+  function bestTimeCheck() {
+    // const time = Date.now() - now;
+    const bestTime = window.localStorage.bestTime ? window.parseInt(window.localStorage.bestTime, 10) : 0;
+    console.log(bestTime, elapsedMil, time);
+    if (elapsedMil > bestTime) {
+      window.localStorage.bestTime = elapsedMil;
+      window.localStorage.dateOfBestTime = new Date().toDateString();
+      bestTimePretty(); 
+    }
   }
 
+  function bestTimePretty() {
+    const timeObject = timeParser(window.parseInt(window.localStorage.bestTime, 10));
+    window.localStorage.bestTime = padTime(timeObject.min) + ":" + padTime(timeObject.sec) + ":" + padTime(timeObject.mil);
+    bestTimeArea.textContent = window.localStorage.bestTime;
+  }
+
+ 
 
 
 
