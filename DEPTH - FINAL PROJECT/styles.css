@@ -35,18 +35,30 @@ body {
     justify-content: space-between;    
     height: calc(100vh - 10em);
     max-height: 480px;
+    width: 100%;
 }
 
 .heading {
-    font-size: 4em;
-    font-weight: bold;
-    text-align: center;
-    color: rgb(21, 21, 80);
-    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
+    font-size: 6em;
+    font-weight: bold;
+    color: rgb(21, 21, 80);
+    font-style: italic;
     margin: 0;
+    text-align: center;
+}
+
+h4 {
+    color: rgb(21, 21, 80);
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
 }
 
 .time {
@@ -87,14 +99,16 @@ h1 {
     .5px .5px 0  rgb(21, 21, 80);
 }
 
+.instruction {
+    color: white;
+    font-weight: bold;
+}
+
 .best-goal-current {
     font-size: 3em;
     color: white;
     margin: 0;
-    transition: font-size 2s ease;
-}
-.best-goal-current.congrats {
-    font-size: 5em;
+    transition: font-size .5s linear;
 }
 
 .best-time, .goal-time, .remaining-time {
@@ -102,6 +116,12 @@ h1 {
     color:  rgb(21, 21, 80);
     font-weight: bold;
     margin: 0;
+}
+
+.best-goal-current.congrats {
+    font-size: 4em;
+    color: rgb(50,205,50);
+    font-weight: bold;
 }
 
 #start, #stop {

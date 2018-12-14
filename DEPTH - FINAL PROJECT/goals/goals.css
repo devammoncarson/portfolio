@@ -42,8 +42,8 @@ h1 {
   }
 
 h2 {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: .2em;
+    margin-bottom: .2em;
   }
 
 hr {
@@ -59,20 +59,6 @@ hr {
     font-weight: bold;
     color: #fff;
 }
-
-/* output {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0;
-    background-color: rgb(21, 21, 80);
-    border-radius: 15px;
-    height: 1.5em;
-    width: 50%
-} */
 
 .goal-set-div {
     display: flex;
@@ -167,19 +153,23 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e00;
-    font-size: 3em;
+    background-color: rgb(21, 21, 80);
+    border-top: .02em dodgerblue;
+    border-right: .02em dodgerblue;
+    border-left: .02em dodgerblue;
+    font-size: 2.5em;
     font-weight: bold;
     text-decoration: none;
     color: white;
-    padding: 0.35em;
+    padding: 0.4em;
   }
-
+  
   .back-anchor:hover {
-    background-color: maroon;
-    border-top: .01em #e00 solid;
-    border-right: .01em #e00 solid;
-    border-left: .01em #e00 solid;
+    color: rgb(21, 21, 80);
+    background-color: dodgerblue;
+    border-top: .02em rgb(21, 21, 80);
+    border-right: .02em rgb(21, 21, 80);
+    border-left: .02em rgb(21, 21, 80);
   }
 
   @media (min-width: 500px) {

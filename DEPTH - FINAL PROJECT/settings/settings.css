@@ -138,7 +138,10 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e00;
+  background-color: rgb(21, 21, 80);
+  border-top: .02em dodgerblue;
+  border-right: .02em dodgerblue;
+  border-left: .02em dodgerblue;
   font-size: 3em;
   font-weight: bold;
   text-decoration: none;
@@ -147,10 +150,10 @@ p {
 }
 
 .back-anchor:hover {
-  background-color: maroon;
-  border-top: .01em #e00 solid;
-  border-right: .01em #e00 solid;
-  border-left: .01em #e00 solid;
+  background-color: dodgerblue;
+  border-top: .02em rgb(21, 21, 80);
+  border-right: .02em rgb(21, 21, 80);
+  border-left: .02em rgb(21, 21, 80);
 }
 
 @media (min-width: 500px) {

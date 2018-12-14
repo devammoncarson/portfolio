@@ -118,19 +118,22 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e00;
+  background-color: rgb(21, 21, 80);
+  border-top: .02em dodgerblue;
+  border-right: .02em dodgerblue;
+  border-left: .02em dodgerblue;
   font-size: 3em;
   font-weight: bold;
   text-decoration: none;
   color: white;
-  padding: 0.6em;
+  padding: 0.5em;
 }
 
 .back-anchor:hover {
-  background-color: maroon;
-  border-top: .05em #e00 solid;
-  border-right: .05em #e00 solid;
-  border-left: .05em #e00 solid;
+  background-color: dodgerblue;
+  border-top: .02em rgb(21, 21, 80);
+  border-right: .02em rgb(21, 21, 80);
+  border-left: .02em rgb(21, 21, 80);
 }
 
 @media (max-width: 499px) {
