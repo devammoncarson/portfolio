@@ -8,9 +8,10 @@ body {
     align-items: center;
     margin: 0;
     height: 100vh;
-    background-image: url("../images/wave.jpg");
+    background-image: url("../images/background.jpg");
     background-color:rgb(21, 21, 80);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     font-family: sans-serif;
     font-size: 10px;
@@ -68,7 +69,7 @@ hr {
     width: 100%;
     padding-left: 1em;
     padding-right: 1em;
-    background-color: rgb(30,144,255, .5);
+    background-color: rgba(30,144,255, .5);
     padding: 1em;
 }
 
@@ -95,7 +96,7 @@ hr {
     justify-content: center;
     width: 100%;
     padding: 1em;
-    background-color: rgb(21, 21, 80, 0.5);
+    background-color: rgba(21, 21, 80, 0.5);
 }
 
 .label {
@@ -166,7 +167,7 @@ button:hover {
   
   .back-anchor:hover {
     color: rgb(21, 21, 80);
-    background-color: dodgerblue;
+    background-color: white;
     border-top: .02em rgb(21, 21, 80);
     border-right: .02em rgb(21, 21, 80);
     border-left: .02em rgb(21, 21, 80);
